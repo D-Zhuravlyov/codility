@@ -96,11 +96,8 @@ class Solution {
                         .sorted(Map.Entry.comparingByValue())
                         .skip(1)
                         .map(Map.Entry::getValue)
-                        .reduce(count).orElse("Error");
+                        .reduce("0",count);
 
-        if (summary.contains(":")) {
-            summary = count.apply(summary, "0");
-        }
 
         return Integer.valueOf(summary);
     }
